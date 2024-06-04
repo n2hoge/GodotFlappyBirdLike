@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://chgqguplu0r7g"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_odbif"]
+[ext_resource type="Texture2D" uid="uid://d4fvtm5yvdebm" path="res://bg_back.png" id="1_vgegr"]
+[ext_resource type="PackedScene" uid="uid://u1nmth8bi038" path="res://player.tscn" id="3_5g04e"]
+[ext_resource type="FontFile" uid="uid://cd433tosroedj" path="res://Xolonium-Regular.ttf" id="4_46nir"]
+
+[sub_resource type="Theme" id="Theme_rxf7h"]
+default_font = ExtResource("4_46nir")
+default_font_size = 64
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_odbif")
+
+[node name="BgBack" type="Sprite2D" parent="."]
+texture = ExtResource("1_vgegr")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("3_5g04e")]
+position = Vector2(139, 97)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Caption" type="Label" parent="CanvasLayer"]
+offset_top = 120.0
+offset_right = 800.0
+offset_bottom = 376.0
+theme = SubResource("Theme_rxf7h")
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
